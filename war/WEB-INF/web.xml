@@ -4,7 +4,7 @@
 
   <servlet>
     <servlet-name>app</servlet-name>
-    <servlet-class>testgae.app_servlet</servlet-class>
+    <servlet-class>cljgae.core</servlet-class>
   </servlet>
 
   <servlet-mapping>
