@@ -8,3 +8,4 @@ README.html
 secret.clj
 .lein-repl-history
 /target/
+/war/WEB-INF/classes/
