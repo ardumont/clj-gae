@@ -7,13 +7,11 @@
   (:require [compojure.route          :as route]
             [appengine.datastore.core :as ds]
             [appengine.users          :as users]))
+(defroutes public-routes
+  (GET "/hello" [] {:status 200
+                    :headers {"Content-Type" "text/plain"}
+                    :body (str "Hello clj on AppEngine!"
+                               "\n\n"
+                               " [powered by AppEngine and clojure]")}))
 
-(comment
-  (defroutes public-routes
-    (GET "/hello" [] {:status 200
-                      :headers {"Content-Type" "text/plain"}
-                      :body (str "Hello clj on AppEngine!"
-                                 "\n\n"
-                                 " [powered by AppEngine and clojure]")}))
-
-  (defservice public-routes))
+(defservice public-routes)
