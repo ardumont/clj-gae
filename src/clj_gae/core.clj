@@ -1,17 +1,21 @@
 (ns clj-gae.core
-  (:require [appengine-magic.core :as ae]))
+  (:gen-class :extends javax.servlet.http.HttpServlet)
+  (:use compojure.core
+        [ring.util.servlet   :only [defservice]]
+        [ring.util.response  :only [redirect]]
+        [hiccup.core         :only [h html]]
+        [hiccup.page-helpers :only [doctype include-css link-to xhtml-tag]]
+        [hiccup.form-helpers :only [form-to text-area text-field]])
+  (:import (com.google.appengine.api.datastore Query))
+  (:require [compojure.route          :as route]
+            [appengine.datastore.core :as ds]
+            [appengine.users          :as users]))
 
-(defn dummy-app-handler [request]
-  {:status 200
-   :headers {"Content-Type" "text/plain"}
-   :body (str "Hello clj on AppEngine!"
-              "\n\n"
-              " [powered by AppEngine and clojure]")})
+(defroutes public-routes
+  (GET "/" [] {:status 200
+               :headers {"Content-Type" "text/plain"}
+               :body (str "Hello clj on AppEngine!"
+                          "\n\n"
+                          " [powered by AppEngine and clojure]")}))
 
-(ae/def-appengine-app dummy-app #'dummy-app-handler)
-
-(comment
-  ;; start server
-  (ae/serve dummy-app :port 8082)
-  ;; stop server
-  (ae/stop))
+(defservice public-routes)
