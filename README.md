@@ -1,4 +1,10 @@
 clj-gae
 =======
 
-Clojure on AppEngine - or so I try!
+Clojure/Compojure on AppEngine.
+
+# deploy
+
+```sh
+./deploy.sh
+```
