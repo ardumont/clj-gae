@@ -1,4 +1,4 @@
-(ns clj-gae.core
+(ns cljgae.core
   (:gen-class :extends javax.servlet.http.HttpServlet)
   (:use [compojure.core]
         [ring.util.servlet   :only [defservice]]
@@ -7,6 +7,7 @@
   (:require [compojure.route          :as route]
             [appengine.datastore.core :as ds]
             [appengine.users          :as users]))
+
 (comment
   (defroutes public-routes
     (GET "/hello" [] {:status 200
