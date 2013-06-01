@@ -1,7 +1,7 @@
 (defproject clj-gae "1.0.0-SNAPSHOT"
   :description "Some dummy app to test clojure/compojure/hiccup on Google App Engine."
   :aot [cljgae.core]
-  :dependencies [[compojure "0.4.0-RC3"]
+  :dependencies [[compojure "0.4.0"]
                  [ring/ring-servlet "0.2.1"]
                  [hiccup "0.2.4"]
                  [appengine "0.2"]
