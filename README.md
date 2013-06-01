@@ -1,4 +1,4 @@
 clj-gae
 =======
 
-Clojure on AppEngine
+Clojure on AppEngine - or so I try!
